@@ -1,12 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
-const path = require('path');
+const path = require('path')
 
 const Person = require('./models/person')
 const app = express()
 const cors = require('cors')
-const PORT = process.env.PORT
+
 /*
 const url =
   `mongodb+srv://matia:${password}@cluster0.qigyc.mongodb.net/phonebook?retryWrites=true&w=majority`
@@ -35,9 +35,6 @@ app.use(express.static(path.join(__dirname, 'dist')))
 
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
 
 let persons = [
   {
@@ -206,3 +203,8 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
     */
+
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
