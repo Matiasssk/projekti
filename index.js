@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
+const path = require('path');
 
 const Person = require('./models/person')
 const app = express()
@@ -26,7 +27,11 @@ const Person = mongoose.model('Person', personSchema)
 
 app.use(cors())
 app.use(express.json())
-app.use(express.static('dist'))
+//app.use(express.static('dist'))
+app.use(express.static(path.join(__dirname, 'dist')))
+
+
+
 
 
 
